@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 350 100% 98%;
+    --foreground: 0 0% 20%;
+    
+    --card: 350 100% 98%;
+    --card-foreground: 0 0% 20%;
+    
+    --popover: 350 100% 98%;
+    --popover-foreground: 0 0% 20%;
+    
+    --primary: 0 0% 15%;
+    --primary-foreground: 350 100% 98%;
+    
+    --secondary: 25 30% 70%;
+    --secondary-foreground: 0 0% 20%;
+    
+    --muted: 350 20% 95%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 25 30% 70%;
+    --accent-foreground: 0 0% 20%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 25 30% 85%;
+    --input: 25 30% 85%;
+    --ring: 25 30% 70%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-tab {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.category-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--accent));
+  transition: width 0.3s ease;
+}
+
+.category-tab.active {
+  color: hsl(var(--primary));
+}
+
+.category-tab.active::after,
+.category-tab:hover::after {
+  width: 100%;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1da851;
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.elegant-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
